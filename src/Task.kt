@@ -1,0 +1,1 @@
+class Task(var text: String)
