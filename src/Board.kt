@@ -1,6 +1,6 @@
 class Board(
     private var name: String,
-    private var `getComingTasks()`: MutableList<Task> = mutableListOf<Task>(),
+    private var comingTasks: MutableList<Task> = mutableListOf<Task>(),
     private var processTasks: MutableList<Task> = mutableListOf<Task>(),
     private var doneTasks: MutableList<Task> = mutableListOf<Task>()
 ) {
@@ -10,7 +10,7 @@ class Board(
     }
 
     fun getName() = name
-    fun getComingTasks() = `getComingTasks()`
+    fun getComingTasks() = comingTasks
     fun getProcessTasks() = processTasks
     fun getDoneTasks() = doneTasks
 
@@ -27,8 +27,8 @@ class Board(
     fun info() {
         println("_____ $name ____")
         println("Предстоящие задачи:")
-        for (i in 0 until `getComingTasks()`.size) {
-            println("${i+1}) ${`getComingTasks()`[i].getText()}")
+        for (i in 0 until getComingTasks().size) {
+            println("${i+1}) ${getComingTasks()[i].getText()}")
         }
         println("Задачи в процессе:")
         for (i in 0 until processTasks.size) {
