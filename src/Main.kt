@@ -1,25 +1,22 @@
-class Main {
-    fun main() {
+fun main(args: Array<String>) {
 
-        val board = Board("MyBoard")
+    Board("MyBoard").also {
 
-        board.addTask(Task("Сделать дело1"), board.comingTasks)
-        board.addTask(Task("Сделать дело2"), board.comingTasks)
-        board.addTask(Task("Сделать дело3"), board.comingTasks)
-        board.addTask(Task("Сделать дело4"), board.proccesTasks)
-        board.addTask(Task("Сделать дело5"), board.proccesTasks)
-        board.addTask(Task("Сделать дело6"), board.proccesTasks)
-        board.addTask(Task("Сделать дело7"), board.doneTasks)
-        board.addTask(Task("Сделать дело8"), board.doneTasks)
-        board.addTask(Task("Сделать дело9"), board.doneTasks)
+        it.addTask(Task("Сделать дело1"), it.comingTasks)
+        it.addTask(Task("Сделать дело2"), it.comingTasks)
+        it.addTask(Task("Сделать дело3"), it.comingTasks)
+        it.addTask(Task("Сделать дело4"), it.proccesTasks)
+        it.addTask(Task("Сделать дело5"), it.proccesTasks)
+        it.addTask(Task("Сделать дело6"), it.proccesTasks)
+        it.addTask(Task("Сделать дело7"), it.doneTasks)
+        it.addTask(Task("Сделать дело8"), it.doneTasks)
+        it.addTask(Task("Сделать дело9"), it.doneTasks)
 
-        board.info()
+        it.info()
 
-        board.removeTask(1, board.comingTasks)
-        board.transferTask(1, board.proccesTasks, board.doneTasks)
+        it.removeTask(1, it.comingTasks)
+        it.transferTask(1, it.proccesTasks, it.doneTasks)
 
-        board.info()
-
-
+        it.info()
     }
 }
