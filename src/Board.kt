@@ -22,15 +22,15 @@ class Board(
         println("_____ $name ____")
         println("Предстоящие задачи:")
         for (i in 0 until comingTasks.size) {
-            println("${i+1}) ${comingTasks[i].text}")
+            println("${i+1}) ${comingTasks[i].getText()}")
         }
         println("Задачи в процессе:")
         for (i in 0 until proccesTasks.size) {
-            println("${i+1}) ${proccesTasks[i].text}")
+            println("${i+1}) ${proccesTasks[i].getText()}")
         }
         println("Выполненные:")
         for (i in 0 until doneTasks.size) {
-            println("${i+1}) ${doneTasks[i].text}")
+            println("${i+1}) ${doneTasks[i].getText()}")
         }
     }
 
