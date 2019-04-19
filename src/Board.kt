@@ -1,43 +1,25 @@
 class Board(
-    private var name: String,
-    private var comingTasks: MutableList<Task> = mutableListOf<Task>(),
-    private var processTasks: MutableList<Task> = mutableListOf<Task>(),
-    private var doneTasks: MutableList<Task> = mutableListOf<Task>()
+    private var name: String
 ) {
-
-    fun addTask(task: Task, list : MutableList<Task>) {
-        list.add(task)
-    }
+    private var tasks: MutableList<Task> = mutableListOf<Task>()
 
     fun getName() = name
-    fun getComingTasks() = comingTasks
-    fun getProcessTasks() = processTasks
-    fun getDoneTasks() = doneTasks
 
+    fun getTasks() = tasks
 
-    fun removeTask(index: Int, list: MutableList<Task>) {
-        list.removeAt(index)
+    fun getTask(index: Int): Task = tasks[index]
+
+    fun addTask(task: Task) {
+        tasks.add(task)
     }
-
-    fun transferTask(index: Int, ofList: MutableList<Task>, toList: MutableList<Task>){
-        toList.add(ofList[index])
-        ofList.removeAt(index)
-
+    fun removeTask(index: Int) {
+        tasks.removeAt(index)
     }
-    fun info() {
-        println("_____ $name ____")
-        println("Предстоящие задачи:")
-        for (i in 0 until getComingTasks().size) {
-            println("${i+1}) ${getComingTasks()[i].getText()}")
-        }
-        println("Задачи в процессе:")
-        for (i in 0 until processTasks.size) {
-            println("${i+1}) ${processTasks[i].getText()}")
-        }
-        println("Выполненные:")
-        for (i in 0 until doneTasks.size) {
-            println("${i+1}) ${doneTasks[i].getText()}")
+    fun getBoardInfo() {
+        println(getName())
+        for (i in 0 until getTasks().size) {
+            print("${i + 1})")
+            getTask(i).getTaskInfo()
         }
     }
-
 }
